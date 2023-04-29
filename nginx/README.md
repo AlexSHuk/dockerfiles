@@ -31,8 +31,8 @@ the commented lines contain the user's nginx configuration file and the resource
 Create your `nginx.conf` configuration file and uncomment the lines.  
 If you are using docker-compose you can specify the path to the configuration in docker-compose.yml, for example:  
 `volumes:
-  - ./path-to/nginx.conf:/etc/nginx/nginx.conf
-  - ./path-to/source/:/usr/share/nginx/html/`
+- ./path-to/nginx.conf:/etc/nginx/nginx.conf
+- ./path-to/source/:/usr/share/nginx/html/`
  
 
 
