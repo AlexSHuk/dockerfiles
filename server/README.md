@@ -24,6 +24,8 @@ To run the application as a Docker container, follow these steps:
 
 `docker run -p 80:80 name_my_project`  
 
-2.3 Open your browser and navigate to http://localhost:80 to access the application.
+2.3 Open your browser and navigate to http://localhost:80 to access the application.  
+
+**!!!note**: if you don't have Docker installed, use the official documentation https://docs.docker.com/engine/install/ubuntu/
 
 
