@@ -7,7 +7,7 @@ This project contains a simple Go application that returns the Docker container 
 
 To run the application as a Docker container, follow these steps:  
 
-1.Build the Docker image from the Dockerfile located in the root directory of the project:  
+1. Build the Docker image from the Dockerfile located in the root directory of the project:  
 
 `docker build -t name_my_project .`  
 
