@@ -1,6 +1,10 @@
 **Project Description**  
 
 This directory contains a Dockerfile for building a container image that runs Nginx web server with Alpine OS;  
+  
+!before you start, make sure you have Docker installed. Check docker version:  
+`docker -v` or `docker version`  
+to install docker follow the instructions https://docs.docker.com/engine/install/ubuntu/
 
 **1 - Getting started**  
 
