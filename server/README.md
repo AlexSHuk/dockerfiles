@@ -2,6 +2,15 @@
 
 This project contains a simple Go application that returns the Docker container ID and hostname on which the application is running.  
 
+**1 Getting started**  
+
+1.1 Clone this repository to your local machine:  
+
+`git clone https://github.com/AlexSHuk/dockerfiles.git`
+
+1.2 Go to the directory of the Dockerfile you want to build:  
+
+`cd server`  
 
 **Running the Application**  
 
@@ -13,7 +22,7 @@ To run the application as a Docker container, follow these steps:
 
 2. Run the container from the built image:  
 
-`docker run -p 8080:80 name_my_project`  
+`docker run -p 80:80 name_my_project`  
 
 3. Open your browser and navigate to http://localhost:8080 to access the application.
 

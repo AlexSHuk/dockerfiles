@@ -8,4 +8,4 @@ Apache Dockerfile :
 - apache from Alpine; 
  
 WEB-server Dockerfile :
-- web server for a python script that returns information about the container's localhost;
+- web server for a GO script that returns information about the container's localhost;
