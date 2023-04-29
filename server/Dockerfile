@@ -1,30 +1,22 @@
-# Build stage
-#FROM python:3.9.5-slim-buster as build
-#WORKDIR /app
-#COPY server.py .
-#RUN mkdir -p /root/.local && \
-#    pip install --user --no-cache-dir -r requirements.txt && \
-#    chmod -R 755 /root/.local && \
-#    rm -rf ~/.cache/pip
-# Run stage
-#FROM python:3.9.5-slim-buster
-#WORKDIR /app
-#COPY --from=build /root/.local /usr/local
-#COPY --from=build /app .
-#CMD ["python", "server.py"]
-# Build stage
-FROM alpine:3.13 as build
-WORKDIR /app
-COPY server.py .
-RUN mkdir -p /app/.local && \
-    chmod -R 755 /app/.local && \
-    rm -rf ~/.cache/pip
+# Сборка исполняемого файла
+FROM golang:1.16-alpine AS builder
 
-# Run stage
+RUN apk update && apk add --no-cache git
+
+WORKDIR /app
+COPY . .
+RUN go get -d -v
+RUN go build -o app
+
+# Создание образа
 FROM alpine:3.13
-WORKDIR /app
-RUN apk update && apk add python3
-COPY --from=build /app/.local /usr/local
-COPY --from=build /app .
-CMD ["python3", "server.py"]
+#LABEL maintainer="Your Name <your.email@example.com>"
 
+RUN apk update && apk add --no-cache ca-certificates
+
+WORKDIR /root/
+COPY --from=builder /app/app .
+
+EXPOSE 80
+
+CMD ["./app"]
