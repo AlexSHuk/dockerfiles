@@ -1,8 +1,8 @@
 FROM alpine:3.14
 
 RUN apk update && apk add --no-cache apache2 php7-apache2 && rm -rf /var/cache/apk/*
-
-COPY source/ /var/www/localhost/htdocs/
+#COPY httpd.conf /etc/httpd/conf/
+#COPY source/ /var/www/localhost/htdocs/
 RUN sed -i "s/#LoadModule\ php7_module/LoadModule\ php7_module/g" /etc/apache2/httpd.conf && \
     sed -i 's/#LoadModule\ rewrite_module/LoadModule\ rewrite_module/g' /etc/apache2/httpd.conf && \
     sed -i 's#^DocumentRoot ".*#DocumentRoot "/var/www/localhost/htdocs"#g' /etc/apache2/httpd.conf && \
